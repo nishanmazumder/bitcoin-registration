@@ -1,8 +1,0 @@
-WEBFORM 1: https://www.weblineexchange.com/panel/register/
-WEBFORM 2: https://www.weblineexchange.com/panel/pidnre/
-WEBFORM 3: https://www.weblineexchange.com/panel/payment/
-
-At webform 2,the program memorize the "Cashout Amount (BTC)" data for webform 3.
-
-At webform 3, the program convert the cashout amount BTC to USD; with nice icons if possible.
-

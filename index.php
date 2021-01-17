@@ -259,8 +259,8 @@
                             <span class="input-group-text nm-input-icon" id="nm-f-i-1"><i
                                         class="far fa-money-bill-alt"></i></span>
                                 <select class="form-select" name="nmPayWith" id="nmPayWith" aria-label="Default select example" aria-describedby="nm-f-i-1">
-                                    <option value="1">Bitcoin Wallet</option>
-                                    <option value="2">USD Wallet</option>
+                                    <option value="Bitcoin Wallet">Bitcoin Wallet</option>
+                                    <option value="USD Wallet">USD Wallet</option>
                                 </select>
                             </div>
                         </div>

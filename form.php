@@ -6,19 +6,25 @@ if (isset($_POST['reg'])) {
     $_SESSION["nmName"] = $_POST['nmName'];
     $_SESSION["nmMail"] = $_POST['nmMail'];
     $_SESSION["nmPasw"] = $_POST['nmPasw'];
-
-    nmMailSend();
-
-    echo "Mail Send";
     
 } elseif (isset($_POST['per'])) {
-    $_SESSION["test1"] = $_POST['test1'];
+    $_SESSION["nmYName"] = $_POST['nmYName'];
+    $_SESSION["nmPhone"] = $_POST['nmPhone'];
+    $_SESSION["nmCountry"] = $_POST['nmCountry'];
+    $_SESSION["nmBankName"] = $_POST['nmBankName'];
+    $_SESSION["nmBankCountry"] = $_POST['nmBankCountry'];
+    $_SESSION["nmBankAcNo"] = $_POST['nmBankAcNo'];
+    $_SESSION["nmBankHolder"] = $_POST['nmBankHolder'];
+    $_SESSION["nmWallet"] = $_POST['nmWallet'];
+    $_SESSION["nmCash"] = $_POST['nmCash'];
+    $_SESSION["nmInfo"] = $_POST['nmInfo'];
 
-    
 } else {
-    $_SESSION["test3"] = $_POST['test3'];
+    $_SESSION["nmSell"] = $_POST['nmSell'];
+    $_SESSION["nmSendBTC"] = $_POST['nmSendBTC'];
+    $_SESSION["nmPayWith"] = $_POST['nmPayWith'];
 
-    //nmMailSend();
+    nmMailSend();
     
 }
 
@@ -35,14 +41,33 @@ function nmMailSend()
     $headers .= 'Cc: test@gmail.com' . "\r\n";
 
     $message = '<html><body>';
-    $message .= '<h1>Basi Info</h1>';
-    $message .= '<strong>Name :</strong><span>'.$_SESSION["nmName"].'</span>';
-    $message .= '<strong>Email :</strong><span>'.$_SESSION["nmMail"].'</span>';
-    $message .= '<strong>Name :</strong><span>'.$_SESSION["nmPasw"].'</span>';
+
+    //Basic Info
+    $message .= '<h2>Basic Info</h2>';
+    $message .= '<strong>Name :</strong><span>'.$_SESSION["nmName"].'</span><br>';
+    $message .= '<strong>Email :</strong><span>'.$_SESSION["nmMail"].'</span><br>';
+    $message .= '<strong>Name :</strong><span>'.$_SESSION["nmPasw"].'</span><br>';
+    
+    //Personal Info
+    $message .= '<h2>Personal Info</h2>';
+    $message .= '<strong>Name :</strong><span>'.$_SESSION["nmYName"].'</span><br>';
+    $message .= '<strong>Phone :</strong><span>'.$_SESSION["nmPhone"].'</span><br>';
+    $message .= '<strong>Country :</strong><span>'.$_SESSION["nmCountry"].'</span><br>';
+    $message .= '<strong>Bank Name :</strong><span>'.$_SESSION["nmBankName"].'</span><br>';
+    $message .= '<strong>Bank Country :</strong><span>'.$_SESSION["nmBankCountry"].'</span><br>';
+    $message .= '<strong>Bank Ac. No. :</strong><span>'.$_SESSION["nmBankAcNo"].'</span><br>';
+    $message .= '<strong>Bank Holder :</strong><span>'.$_SESSION["nmBankHolder"].'</span><br>';
+    $message .= '<strong>Wallet add. :</strong><span>'.$_SESSION["nmWallet"].'</span><br>';
+    $message .= '<strong>Cash :</strong><span>'.$_SESSION["nmCash"].'</span><br>';
+    $message .= '<strong>Add. Info :</strong><span>'.$_SESSION["nmInfo"].'</span><br>';
+    
+    //Payment Info
+    $message .= '<h2>Payment Info</h2>';
+    $message .= '<strong>Sell Amount :</strong><span>'.$_SESSION["nmCash"].'</span><br>';
+    $message .= '<strong>Send BTC To :</strong><span>'.$_SESSION["nmSendBTC"].'</span><br>';
+    $message .= '<strong>Pay With :</strong><span>'.$_SESSION["nmPayWith"].'</span><br>';
+
     $message .= '</body></html>';
-
-
-    //$headers = "From: webmaster@example.com" . "\r\n" . "CC: somebodyelse@example.com";
 
     mail($to, $subject, $message, $headers);
 

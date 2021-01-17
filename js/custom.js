@@ -29,20 +29,13 @@ $(document).ready(function () {
             data: dataString,
             //dataType: 'json',
             success: function (data) {
-                console.log(data)
+                //console.log(data)
             },
             error: function (data) {
-                console.log(data);
+                //console.log(data);
             }
         });
     }
-
-    // Form Validation
-
-
-    // $("#nmStepOne").css("display", "none");
-    // $("#nmStepTwo").css("display", "none");
-    // $("#nmStepThree").css("display", "block");
 
     //Form Step Start ------->
     //Registration
@@ -119,6 +112,9 @@ $(document).ready(function () {
     });
 
     function nmFormStepSubmit() {
-        console.log("ok");
+        $(".nm-welcome").html('<h1>Thanks ! We Will back 2 you in 24hours.</h1>');
+        $("#nmStepOne").css("display", "none");
+        $("#nmStepTwo").css("display", "none");
+        $("#nmStepThree").css("display", "none");
     }
 });
