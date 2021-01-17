@@ -1,1 +1,1 @@
-# bitcon-regestration
+# bitcon-registration
